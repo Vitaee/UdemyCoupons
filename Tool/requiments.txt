@@ -1,0 +1,5 @@
+requests
+json
+sqlite3
+BeatifulSoup
+matplotlib
