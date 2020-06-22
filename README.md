@@ -19,7 +19,7 @@ while i <= 10:
 
 #Veri Görselleştirme
 
-DataVisulation.py dosyasının amacı; Json dosyasındaki kurs puan verilerini okuyup grafiğe dökmek. Programın elde ettiği sonuç ise şu şekilde:
+DataVisulation.py dosyasının amacı; Json dosyasındaki kurs puan verilerini okuyup grafiğe dökmek. Programın elde ettiği sonuç:
 ![alt text](https://i.hizliresim.com/CUDU34.png)
 
 
