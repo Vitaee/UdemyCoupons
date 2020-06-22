@@ -12,10 +12,12 @@ i = 1
 while i <= 10:
     ...
 ```
+
 #Sqlite3 Veri Tabanı
 
 Çekilen veriler bir json dosyasına ve sqlite3 veri tabanına aktarılmakta. Veri tabanından bir ekran görüntüsü:
 ![alt text](https://i.hizliresim.com/EDKALC.png)
+
 
 #Veri Görselleştirme
 
