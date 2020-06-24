@@ -191,16 +191,6 @@ class Udemy:
 
 
     def saveResults(self):
-        # Eğer listeler içerisinde aynı veriler varsa.
-        list(set(self.CourseNames))
-        list(set(self.CourseLinks))
-        list(set(self.CourseImages))
-        list(set(self.CourseAuthors))
-        list(set(self.CourseInfos))
-        list(set(self.CoursePoints))
-        list(set(self.CourseStudents))
-
-
         conn = baglanti()
 
         #Saving to SQLite
@@ -213,7 +203,7 @@ class Udemy:
             conn.cursor().execute(sqlQuery, data)
             conn.commit()
         print("Veri aktarımı tamamlandı.")
-        sys.exit()
+   
 
 
 if __name__ == '__main__':
