@@ -39,7 +39,6 @@ class Udemy:
         i = 1
         while i <= 2:
             page = requests.get(f"{self.baseUrl}/page/{i}/", headers=self.userID)
-
             source = page.text
             soup = BeautifulSoup(source, 'html.parser')
 
@@ -48,13 +47,11 @@ class Udemy:
             for item in first_data:
                 items = item.find_all('a')
                 for data in items:
-                    #self.udemyVeri(data['href'])
-
                     self.CourseLinks.append(data['href'])
             i += 1
 
-            print("tüm linkler listeye atıldı.")
-            self.udemyVeri()
+        print("tüm linkler listeye atıldı.")
+        self.udemyVeri()
     def udemyVeri(self):
         #Hatalı linki kaldırdık.
         prefixes = ("https://web.whatsapp.com")
