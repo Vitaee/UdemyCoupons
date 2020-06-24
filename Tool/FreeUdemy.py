@@ -90,7 +90,10 @@ class Udemy:
                         #Eğitim Link
                         self.CourseLink = self.CourseLinks[a]
 
-                    except:pass
+                    except:
+                        print("Kupon linki hatalı!")
+                        del self.CourseLinks[a]
+                        pass
 
 
                     #Eğitim Resmi
@@ -159,8 +162,9 @@ class Udemy:
                             self.CourseStudent = course_students.text
                             self.CourseStudents.append(course_students.text.rstrip())
                     except:
-                        print("veri boş geldi!")
-                        self.CourseStudents.append("Öğrenci Verisi Yok")
+                        last_studenst = soup.find('div',attrs={'data-purpose':'enrollment'})
+                        self.CourseStudents.append(last_studenst.text.rstrip())
+                        self.CourseStudent = last_studenst.text.rstrip()
                         pass
 
 
@@ -191,6 +195,17 @@ class Udemy:
 
 
     def saveResults(self):
+        #Hatalı verileri silme işlemi.
+        prefixes = ("https://www.udemy.com/stat")
+        for word in self.CourseImages[:]:
+            if word.startswith(prefixes):
+                self.CourseImages.remove(word)
+
+        prefixes = ("https://", "summary")
+        for word in self.CourseInfos[:]:
+            if word.startswith(prefixes):
+                self.CourseInfos.remove(word)
+                
         conn = baglanti()
 
         #Saving to SQLite
